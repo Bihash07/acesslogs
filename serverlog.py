@@ -1,8 +1,11 @@
 from time import *
 
 class Connect:
-    def __init__(self,FileActIon,FilaEncode):
-        self.fileopen = open(FileActIon , 'r' ,encoding = FilaEncode)
+    def __init__(self,FileActIon,FileEncode = None):
+        if FileEncode:
+            self.fileopen = open(FileActIon , 'r' ,encoding = FileEncode)
+        else:
+            self.fileopen = open(FileActIon , 'r')
 
     def read(self):
         self.filereads = self.fileopen.readlines()
